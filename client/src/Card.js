@@ -12,7 +12,7 @@ function Card({ pokemon }) {
 
   return (
     <div>
-      <div className='mx-auto h-full flex flex-col items-center tracking-widest text-white text-xl poke-font bg-slate-500 py-8 m-8 w-72 rounded-xl'>
+      <div className='mx-auto h-full flex flex-col items-center text-center tracking-widest text-white text-xl bg-slate-500 py-8 m-8 w-72 rounded-xl'>
         <h1>Name: {name}</h1>
         <h1>Type 1: {type_1}</h1>
         <h1>Type 2: {type_2}</h1>
