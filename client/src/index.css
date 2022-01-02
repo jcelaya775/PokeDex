@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fill-window {
+  height: 100%;
+  /* position: absolute; */
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
