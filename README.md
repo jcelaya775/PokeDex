@@ -24,3 +24,5 @@ Runs the react client app only.
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+![Screenshot](thumbnail.png)
