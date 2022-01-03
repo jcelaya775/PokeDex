@@ -12,11 +12,11 @@ function App() {
 
     setTimeout(async () => {
       await fetch(url)
-        .then((res) => res.text())
+        .then((res) => res.json())
         .then((data) => {
           console.log(data)
-          // setMons(data)
-          // setLoading(true)
+          setMons(data)
+          setLoading(true)
         })
         .catch((err) => console.log(err))
 
