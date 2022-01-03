@@ -19,10 +19,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
-// // Home Page
-// app.get('/', (req, res) => {
-//     res.send('Server Running...');
-// })
+// Home Page
+app.get('/', (req, res) => {
+    res.send('Server Running...');
+})
 
 // Routes
 app.use('/api/pokemons', pokemons)
