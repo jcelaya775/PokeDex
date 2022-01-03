@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 // Home Page
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    res.sendFile('Server Running...');
 })
 
 // Routes
