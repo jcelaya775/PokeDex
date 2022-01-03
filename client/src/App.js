@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const url = 'http://localhost:5000/api/pokemons'
+    const url = '/api/pokemons'
 
     setTimeout(async () => {
       await fetch(url)
@@ -26,7 +26,7 @@ function App() {
 
   const searchPokemon = async (s) => {
     s = s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()
-    const url = `http://localhost:5000/api/pokemons/${s}`
+    const url = `/api/pokemons/${s}`
 
     setLoading(true)
 
