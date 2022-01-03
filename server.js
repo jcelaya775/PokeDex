@@ -11,7 +11,6 @@ const pokemons = require('./routes/api/pokemons');
 const app = express();
 
 // Note: Order of mongoose statements does not matter b/c mongoose will queue operations if necessary
-// But, ideal order is 
 const url = process.env.URL
 mongoose.connect(url)
 
@@ -20,14 +19,13 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
-// Home Page
-app.get('/', (req, res) => {
-    res.send('Server Running...');
-})
+// // Home Page
+// app.get('/', (req, res) => {
+//     res.send('Server Running...');
+// })
 
 // Routes
 app.use('/api/pokemons', pokemons)
-app.use(express.static(path.resolve(__dirname, './src')));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
