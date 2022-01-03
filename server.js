@@ -13,6 +13,8 @@ const app = express();
 // Note: Order of mongoose statements does not matter b/c mongoose will queue operations if necessary
 const url = process.env.URL
 mongoose.connect(url)
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.log(err));
 
 // Bodyparse Middleware
 app.use(cors())
