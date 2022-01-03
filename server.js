@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/pokemons', pokemons)
 
+// Serve assets to heroku
 // Set static folder
 app.use(express.static('client/build'));
 app.get('*', (req, res) => {
