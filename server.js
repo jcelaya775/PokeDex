@@ -27,15 +27,11 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/pokemons', pokemons)
 
-// Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
-    // Set static folder
-    app.use(express.static('client/build'));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
+// Set static folder
+app.use(express.static('client/build'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+})
 
 // Launch Server
 const port = process.env.PORT || 5000
