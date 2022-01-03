@@ -22,6 +22,10 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/pokemons', pokemons)
 
+app.get('/', (req, res) => {
+    res.send('server up');
+})
+
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
     // Set static folder

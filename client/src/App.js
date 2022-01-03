@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import Display from './Display'
-import Card from './Card'
 import LoadingSpinner from './LoadingSpinner'
 
 function App() {
