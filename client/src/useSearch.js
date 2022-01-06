@@ -19,7 +19,7 @@ export default function useSearch(query, pageNumber) {
 
         axios({
             method: 'GET',
-            url: 'http://localhost:5000/api/pokemons',
+            url: `http://localhost:5000/api/pokemons/${query}`,
             params: { q: query, page: pageNumber },
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {

@@ -13,14 +13,14 @@ function App() {
   const searchPokemon = async (s) => {
     s = s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()
 
-    setQuery(query)
+    setQuery(s)
     setPageNumber(1)
   }
 
   const { mons, hasMore, loading, error } = useSearch(query, pageNumber)
 
-  console.log('mons:')
-  console.log(mons)
+  // console.log('mons:')
+  // console.log(mons)
 
   return (
     <div>
