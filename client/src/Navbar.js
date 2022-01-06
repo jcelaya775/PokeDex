@@ -2,16 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 
 function Navbar({ onInput }) {
   const inputRef = useRef()
-  const [search, updateSearch] = useState('default State')
+  const [search, updateSearch] = useState('')
 
   useEffect(() => {
-    const inp = inputRef.current
-  }, [])
-
-  useEffect(() => {
+    console.log('mounted')
     inputRef.current.addEventListener('keyup', onKeyUp)
 
     return () => {
+      console.log('unmounted')
       inputRef.current.removeEventListener('keyup', onKeyUp)
     }
   }, [])

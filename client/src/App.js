@@ -1,44 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
+import useSearch from './useSearch'
 import Navbar from './Navbar'
 import Display from './Display'
 import LoadingSpinner from './LoadingSpinner'
 
 function App() {
-  const [mons, setMons] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [query, setQuery] = useState('')
+  const [pageNumber, setPageNumber] = useState(1)
 
-  useEffect(() => {
-    const url = '/api/pokemons'
-
-    setTimeout(async () => {
-      await fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data)
-          setMons(data)
-          setLoading(true)
-        })
-        .catch((err) => console.log(err))
-
-      setLoading(false)
-    })
-  }, [])
+  const observer = useRef()
 
   const searchPokemon = async (s) => {
     s = s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()
-    const url = `/api/pokemons/${s}`
 
-    setLoading(true)
-
-    await fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setMons(data)
-      })
-      .catch((err) => console.log(err))
-
-    setLoading(false)
+    setQuery(query)
+    setPageNumber(1)
   }
+
+  const { mons, hasMore, loading, error } = useSearch(query, pageNumber)
+
+  console.log('mons:')
+  console.log(mons)
 
   return (
     <div>

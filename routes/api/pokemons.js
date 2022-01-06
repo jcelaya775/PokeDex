@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
     Pokemon.find()
         .sort({ name: 1 })
         .then(pokemons => {
-            console.log(pokemons);
             res.json(pokemons);
         });
 
@@ -22,8 +21,6 @@ router.get('/', (req, res) => {
 // @accss   Public
 router.get('/:name', (req, res) => {
     const s = req.params.name;
-
-    // console.log(`Searching for ${s}...`);
 
     Pokemon.find({ Name: { "$regex": s, "$options": "i" } })
         .then(pokemons => {
